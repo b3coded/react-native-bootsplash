@@ -4,7 +4,7 @@ import BootSplash from "react-native-bootsplash";
 
 let bootSplashLogo = require("./assets/bootsplash_logo.png");
 
-let fakeApiCallWithoutBadNetwork = (ms) =>
+let fakeApiCallWithoutBadNetwork = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
 let App = () => {
