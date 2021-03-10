@@ -8,6 +8,8 @@
   "types": "dist/typescript/index.d.ts",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
+  "react-native": "src/index",
+  "source": "src/index",
   "files": [
     "/android",
     "/dist",
