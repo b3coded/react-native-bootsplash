@@ -3,21 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean-modules": "rm -rf ./node_modules/react-native-bootsplash/{example,node_modules}",
-    "clean": "rm -rf ./node_modules ./ios/Pods",
-    "pod-update": "cd ./ios && pod update && cd ..",
-    "postinstall": "yarn clean-modules && yarn pod-update",
-    "start": "react-native start",
-    "reinstall": "yarn clean && yarn install"
+    "clean": "rimraf ./node_modules ./ios/Pods",
+    "pod-update": "node ./scripts/pod-update.js",
+    "postinstall": "yarn pod-update",
+    "reinstall": "yarn clean && yarn install",
+    "android": "react-native run-android --no-packager",
+    "ios": "react-native run-ios",
+    "start": "react-native start"
   },
   "dependencies": {
     "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-bootsplash": "file:../"
+    "react-native": "0.63.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/runtime": "^7.12.13",
-    "metro-react-native-babel-preset": "^0.65.0"
+    "babel-plugin-module-resolver": "^4.0.0",
+    "metro-react-native-babel-preset": "^0.65.0",
+    "rimraf": "^3.0.2"
   }
 }
